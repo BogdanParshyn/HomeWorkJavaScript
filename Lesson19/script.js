@@ -3,13 +3,15 @@
 
 "use strict";
 
-// 1: Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет, что оно больше нуля и меньше 10. Если это так - пусть функция возвращает true, если не так - false.
+// 1: Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет, 
+// что оно больше нуля и меньше 10. Если это так - пусть функция возвращает true, 
+// если не так - false.
 
 function isNumberInRange(a) {
     if( a > 0 && a < 10 ) {
-        alert(a = true);
+        return true;
     } else {
-        alert(a = false);
+        return false;
     }
 }
 
@@ -18,9 +20,9 @@ isNumberInRange(1);
 // Или:
 function isNumberInRange(a) {
     if( a > 0 && a < 10 ) {
-        return alert(true);
+        return true;
     } else {
-        return alert(false);
+        return false;
     }
 }
 
@@ -34,13 +36,15 @@ function isNumberInRange(a) {
 isNumberInRange(10); 
 // =========================================================================================
 
-// 2:Сделайте функцию isEven() (even - это четный), которая параметром принимает целое число и проверяет: четное оно или нет. Если четное - пусть функция возвращает true, если нечетное - false.
+// 2:Сделайте функцию isEven() (even - это четный), которая параметром принимает целое число 
+// и проверяет: четное оно или нет. Если четное - пусть функция возвращает true, 
+// если нечетное - false.
 
 function isEven(a) {
     if( a % 2 == 0) {
-        alert(a = true);
+        return true;
     } else {
-        alert(a = false);
+        return false;
     }
 }
 var a = Math.round(3.5);
