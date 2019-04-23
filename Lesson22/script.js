@@ -49,6 +49,17 @@ var result = arr.slice(0, i).reduce(function(sum, number,) {
   }, 0);
   
 console.log( result ); 
+
+// Или так, но нужно подправить:
+
+var arr = [4, 3, 5, 5, 1, 4, 8, 6];
+var i = arr.indexOf(0);
+
+var result = arr.slice(0, i).reduce(function(sum, number,) {
+    return sum + number;
+  }, 0);
+  
+console.log( result ); 
 // ========================================================================================= //
 
 /* 3-е Задание:
