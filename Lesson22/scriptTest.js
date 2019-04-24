@@ -3,25 +3,7 @@
 
 "use strict";
 
-/* 1-е Задание: 
-    1. Дан массив с числами (Пример: var arr = [2, -5, 1, -2, 0, -3, 2, -14]) - массив может быть и другим.
-    1) В начале вам нужно убрать из него все отрицательные числа используя filter
-    2) Извлесь корень из каждого значения этого массива и записать в переменную. Используя map.
-    3) Вывести массив в консоль
-*/
-console.log('1-е Задание:');
 
-var arr = [2, -5, 1, -2, 0, -3, 2, -14];
-
-var plusArr = arr.filter(function(numberPl) {
-  return numberPl > 0;
-});
-
-var sqArr = plusArr.map(function(numberSq) {
-    return Math.sqrt(numberSq);
-  });
-
-console.log( sqArr );
 // ========================================================================================= //
 
 /* 2-е Задание:
@@ -48,9 +30,9 @@ var result = arr.slice(0, i).reduce(function(sum, number,) {
     return sum + number;
   }, 0);
   
-console.log( result ); 
+// console.log( result ); 
 
-// Или так:
+// Или так, но нужно подправить:
 
 var arr = [4, 3, 5, 5, 0, 4, 8, 6];
 
@@ -60,27 +42,25 @@ if(arr.indexOf(0) != -1) {
     i = arr.length;
 }
 
+// console.log(i);
+
 var result = arr.slice(0, i).reduce(function(sum, number,) {
     return sum + number;
   }, 0);
   
-console.log( result ); 
+// console.log( result ); 
 // ========================================================================================= //
 
-/* 3-е Задание:
-   3. Напишите функцию summArguments, которая сложит все аргументы переданные в функцию. Например
-    summArguments(10, 1, 2, 5); // 18
-    summArguments(10); // 10
-*/
-console.log('\n3-е Задание:');
+// Или так, но нужно подправить:
 
-function summArgument(){
-    var sum = 0;
-    for (var i = 0; i < arguments.length; i++) {
-        sum += arguments[i];
-    } return sum;
-};
+var arr = [4, 3, 5, 5, 0, 4, 8, 6];
+var i = arr.indexOf(0);
 
-console.log( summArgument(10, 1, 2, 5) );
-console.log( summArgument(10) );
+console.log(i);
+
+var result = arr.splice(0, arr.length).reduce(function(sum, number,) {
+    return sum + number;
+  }, 0);
+  
+console.log( result ); 
 // ========================================================================================= //
