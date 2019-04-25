@@ -29,7 +29,7 @@ console.log( sqArr );
     Нужно найти сумму элементов от начала и до нуля. (В примере это первые 4 элемента)
     Использовать функция reduce
 */
-console.log('\n2-е Задание:');
+console.log('\n2.1 Задание:');
 
 var arr = [4, 3, 5, 5, 0, 4, 8, 6];
 var i = 0;
@@ -50,7 +50,8 @@ var result = arr.slice(0, i).reduce(function(sum, number,) {
   
 console.log( result ); 
 
-// Или так:
+// ======================== Или так:
+console.log('\n2.2 Задание:');
 
 var arr = [4, 3, 5, 5, 0, 4, 8, 6];
 
@@ -64,6 +65,30 @@ var result = arr.slice(0, i).reduce(function(sum, number,) {
     return sum + number;
   }, 0);
   
+console.log( result ); 
+
+// ======================== Или так:
+console.log('\n2.3 Задание:');
+
+var arr = [4, 3, 5, 5, 0, 4, 8, 6], i = arr.indexOf(0);
+
+i = (i != -1) ? i : i = arr.length;
+
+var result = arr.splice(0, i).reduce(function(sum, number,) {
+    return sum + number;
+  }, 0);
+
+console.log( result ); 
+
+// ======================== Или так:
+console.log('\n2.4 Задание:');
+
+var arr = [4, 3, 5, 5, 0, 4, 8, 6], i = arr.indexOf(0);
+
+var result = arr.splice( 0, (i = (i != -1) ? i : i = arr.length) ).reduce(function(sum, number,) {
+    return sum + number;
+  }, 0);
+
 console.log( result ); 
 // ========================================================================================= //
 

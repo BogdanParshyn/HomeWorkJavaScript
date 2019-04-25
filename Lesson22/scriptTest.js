@@ -36,31 +36,49 @@ var result = arr.slice(0, i).reduce(function(sum, number,) {
 
 var arr = [4, 3, 5, 5, 0, 4, 8, 6];
 
-if(arr.indexOf(0) != -1) {
+if(arr.indexOf(1) != -1) {
     i = arr.indexOf(0);
 } else { 
     i = arr.length;
 }
 
-// console.log(i);
+console.log(i);
 
 var result = arr.slice(0, i).reduce(function(sum, number,) {
     return sum + number;
   }, 0);
   
-// console.log( result ); 
+console.log( result ); 
 // ========================================================================================= //
 
 // Или так, но нужно подправить:
 
-var arr = [4, 3, 5, 5, 0, 4, 8, 6];
-var i = arr.indexOf(0);
+var arr = [4, 3, 5, 5, 1, 4, 8, 6];
 
+var i = arr.indexOf(1);
+
+i = (i != -1) ? i : i = arr.length;
+/*
+if(i != -1) {
+  i;
+} else {
+  i = arr.length;
+}
+*/
 console.log(i);
 
-var result = arr.splice(0, arr.length).reduce(function(sum, number,) {
+var result = arr.splice(0, i).reduce(function(sum, number,) {
     return sum + number;
   }, 0);
-  
+
 console.log( result ); 
 // ========================================================================================= //
+
+var arr = [4, 3, 5, 5, 0, 4, 8, 6], i = arr.indexOf(1);
+
+var result = arr.splice(0, (i = (i != -1) ? i : i = arr.length) ).reduce(function(sum, number,) {
+    return sum + number;
+  }, 0);
+
+console.log( result ); 
+
