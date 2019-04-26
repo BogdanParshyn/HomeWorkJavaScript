@@ -55,7 +55,7 @@ console.log( result );
 
 var arr = [4, 3, 5, 5, 1, 4, 8, 6];
 
-var i = arr.indexOf(1);
+var i = arr.indexOf(0);
 
 i = (i != -1) ? i : i = arr.length;
 /*
