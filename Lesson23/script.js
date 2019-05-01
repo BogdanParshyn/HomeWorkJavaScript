@@ -80,37 +80,30 @@ console.log( d[0].toUpperCase() + d.slice(1) );
 */
 console.log('\n4 Задание:');
 
-/*
 function getDayLeft() {
-    var now = new Date(); // Узнаем текущее время. //console.log(now);
-    var birthday = new Date( prompt("Введите дату своего ДР в таком виде: YYYY-MM-DD:", ) ); // Узнаем время, когда закончится текущий день.
-
-    birthday.setFullYear( now.getFullYear() ); // console.log(birthday);
-
-    return Math.round( (birthday - now) / (1000 * 3600 * 24) ); // Узнаем сколько дней остаолось до ДР, путем разницы двух дат, и округляем до целого числа.
-}
-
-alert( "Еще " + getDayLeft() + " дн. осталось до Вашего Дня Рождения!" );
-*/
-// ========================================================================================= //
-
-function getDayLeft() {
-    var now = new Date(); // Узнаем текущее время. //console.log(now); 1985-05-25
+    var now = new Date(); // Узнаем текущее время. 
     var inputBDay = prompt("Введите дату своего ДР в таком виде: YYYY-MM-DD:", "");
+    var bDay = new Date(inputBDay); // Узнаем дату рождения.
     
-    var bDay = new Date(inputBDay);
-    
-    var getYearInNow = now.getFullYear();
-    bDay.setFullYear(getYearInNow); 
+    console.log(inputBDay);
 
-    console.log(bDay);
-    if (inputBDay == null || bDay <= now) {
-        return "Вы неправильно ввели дату, повторите еще раз!";
-    } else if (inputBDay.length == 10 && inputBDay[4, 7] == '-'){
-        return "Еще " + Math.round( (bDay - now) / (1000 * 3600 * 24) ) + " дн. осталось до Вашего Дня Рождения!";
-    } else {
-        return "Вы неправильно ввели дату, повторите еще раз!!!";
+    if (inputBDay == null || bDay == 'Invalid Date' || inputBDay.length != 10 || inputBDay[4, 7] != '-') {
+
+        return "Вы неправильно ввели дату, повторите еще раз!!!";   
+    } 
+    else {
+        bDay.setFullYear(now.getFullYear()); // ДР присваиваем год текущей дате. 
+        var msInMin = (1000 * 3600 * 24); // Переменная преобразования с мс в дни.      
+                if (bDay > now){
+                    return "Еще " + Math.round( (bDay - now) / msInMin ) + " дн. до Вашего ДР!";
+                } else if (Math.floor( (now - bDay) / msInMin ) == 0){
+                    return "ДР Сегодня!"
+                } else {
+                    bDay.setFullYear(now.getFullYear() + 1); // Прибавляем к ДР еще год, в случае если ДР уже было в этом году.
+                    return "Еще " + Math.round( (bDay - now) / msInMin ) + " дн. до Вашего ДР!!!";
+                }  
     }
 }
 
 alert( getDayLeft() );
+// ========================================================================================= //
